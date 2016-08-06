@@ -1,11 +1,17 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
+angular-forms-start/dist
+angular-forms-start/tmp
+angular-forms-template/dist
+angular-forms-template/tmp
+angular-forms-model/dist
+angular-forms-model/tmp
 
 # dependencies
-/node_modules
+angular-forms-start/node_modules
+angular-forms-template/node_modules
+angular-forms-model/node_modules
 /bower_components
 
 # IDEs and editors
