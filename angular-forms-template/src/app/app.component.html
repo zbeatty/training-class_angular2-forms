@@ -1,32 +1,35 @@
-<form>
+<form novalidate #form="ngForm" (ngSubmit)="formSubmit(form.value)">
   <md-card>
-    <md-card-title>User Sign Up</md-card-title>
+    <md-card-title>User Sign Up : {{ firstName }}</md-card-title>
     <md-card-content>
+      {{ first.value }}
       <div class="flex">
-        <md-input placeholder="First name" name="first"></md-input>
-        <md-input placeholder="Last name" name="last"></md-input>
+        <md-input placeholder="First name" [(ngModel)]="firstName" #first="ngModel" name="first"></md-input>
+        <md-input placeholder="Last name" ngModel name="last"></md-input>
       </div>
-      <md-input placeholder="Username" name="username"></md-input>
+      <md-input placeholder="Username" ngModel name="username" required></md-input>
       <div class="flex">
-        <md-input placeholder="Password" name="password"></md-input>
-        <md-input placeholder="Confirm Password" name="confirmPassword"></md-input>
+        <md-input placeholder="Password" ngModel name="password" required></md-input>
+        <md-input placeholder="Confirm Password" ngModel name="confirmPassword"></md-input>
       </div>
-      <div>
+      <div class="errors" *ngIf="!address.valid">The address is invalid</div>
+      <div ngModelGroup="address" #address="ngModelGroup">
         <p>Address</p>
-        <md-input placeholder="Street" name="street" required></md-input>
+        <md-input placeholder="Street" ngModel name="street" required></md-input>
         <div class="flex align-center">
-          <md-input placeholder="City" name="city" class="flex-three"></md-input>
-          <select name="state" class="flex-one">
+          <md-input placeholder="City" ngModel name="city" class="flex-three"></md-input>
+          <select ngModel name="state" class="flex-one">
               <option value="" disabled>Select a state</option>
               <option value="CA">CA</option>
               <option value="NY">NY</option>
             </select>
-          <md-input placeholder="zip" type="number" name="zip" class="flex-one"></md-input>
+          <md-input placeholder="zip" type="number" ngModel name="zip" class="flex-one"></md-input>
         </div>
       </div>
     </md-card-content>
     <md-card-actions align="end">
-      <button md-button color="primary" type="submit">SUBMIT</button>
+      <button md-button color="primary" type="submit" [disabled]="!form.valid">SUBMIT</button>
     </md-card-actions>
   </md-card>
 </form>
+{{ form.value | json }}

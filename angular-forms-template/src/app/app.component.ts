@@ -17,4 +17,15 @@ import { MD_INPUT_DIRECTIVES } from '@angular2-material/input';
 })
 export class AppComponent {
   title = 'app works!';
+  firstName:string;
+
+  constructor() {
+    setTimeout(() => {
+      this.firstName = "Buster";
+    }, 1000);
+  }
+
+  formSubmit(value:any) {
+    console.log('submit', value);
+  }
 }
