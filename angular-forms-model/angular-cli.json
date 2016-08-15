@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.10",
-    "name": "angular-forms-model"
+    "name": "angular-http"
   },
   "apps": [
     {

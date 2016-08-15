@@ -16,16 +16,31 @@ const map: any = {
 const packages: any = {
 };
 
-
-const materialPkgs = [
-  'core',
+// put the names of any of your Material components here
+const materialPkgs:string[] = [
   'button',
+  'card',
+  'core',
+  'checkbox',
+  'grid-list',
+  'icon',
   'input',
-  'card'
+  'list',
+  'menu',
+  'progress-bar',
+  'progress-circle',
+  'radio',
+  'sidenav',
+  'slider',
+  'slide-toggle',
+  'button-toggle',
+  'tabs',
+  'toolbar',
+  'tooltip',
 ];
 
 materialPkgs.forEach((pkg) => {
-  packages[`@angular2-material/${pkg}`] = { main: `${pkg}.js` };
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

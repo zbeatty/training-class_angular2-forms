@@ -1,59 +1,69 @@
-* {
-  -webkit-font-smoothing: antialiased;
+.app-content {
+  padding: 20px;
 }
 
-body {
-  background: rgba(0,0,0,0.05);
+.app-content md-card {
+  margin: 20px;
 }
 
-form {
-  display: flex;
-  justify-content: center;
+.app-sidenav {
+  padding: 10px;
+  min-width: 100px;
 }
 
-md-card {
-  width: 500px;
+.app-content md-checkbox {
+  margin: 10px;
 }
 
-.flex {
-  display: flex;
+.app-toolbar-filler {
+  flex: 1 1 auto;
 }
 
-.flex-col {
-  flex-direction: column;
+.app-toolbar-menu {
+  padding: 0 14px 0 14px;
+  color: white;
 }
 
-.align-center {
-  align-items: center;
+.app-icon-button {
+  box-shadow: none;
+  user-select: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: none;
+  font-weight: normal;
+  height: auto;
+  line-height: inherit;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
 }
 
-.justify-center {
-  justify-content: center;
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
-md-input {
-  width: 100%;
+.app-spinner {
+  height: 150px;
+  width: 220px;
+  margin: auto;
 }
 
-md-input, label, select {
-  margin-right: 8px;
+.app-input-icon {
+  font-size: 16px;
 }
 
-md-input:last-child {
-  margin-right: 0;
+.app-list {
+  border: 1px solid rgba(0,0,0,0.12);
+  width: 350px;
+  margin: 20px;
 }
 
-.flex-one {
-  flex-grow: 1;
-  flex-basis: 25%;
-}
-
-.flex-three {
-  flex-grow: 3;
-  flex-basis: 75%;
-}
-
-.errors {
-  color: red;
-  padding-bottom: 10px;
+.app-progress {
+  margin: 20px;
 }

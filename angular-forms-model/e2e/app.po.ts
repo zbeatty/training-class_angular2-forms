@@ -1,4 +1,4 @@
-export class AngularFormsStartPage {
+export class AngularHttpPage {
   navigateTo() {
     return browser.get('/');
   }
