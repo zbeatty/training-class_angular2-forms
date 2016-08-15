@@ -1,10 +1,10 @@
-import { AngularFormsStartPage } from './app.po';
+import { AngularHttpPage } from './app.po';
 
-describe('angular-forms-start App', function() {
-  let page: AngularFormsStartPage;
+describe('angular-http App', function() {
+  let page: AngularHttpPage;
 
   beforeEach(() => {
-    page = new AngularFormsStartPage();
+    page = new AngularHttpPage();
   });
 
   it('should display message saying app works', () => {
