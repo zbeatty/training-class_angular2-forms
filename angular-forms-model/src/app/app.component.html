@@ -13,7 +13,8 @@
         <md-input placeholder="Password" name="password" formControlName="password"></md-input>
         <md-input placeholder="Confirm Password" name="confirmPassword" formControlName="confirmPassword"></md-input>
       </div>
-      <div formGroupName="address">
+
+      <!--<div formGroupName="address">
         <p>Address</p>
         <md-input placeholder="Street" name="street" formControlName="street"></md-input>
         <div class="flex align-center">
@@ -25,7 +26,24 @@
             </select>
           <md-input placeholder="zip" type="number" name="zip" class="flex-one" formControlName="zip"></md-input>
         </div>
+      </div>-->
+      <div formArrayName="address">
+        <div *ngFor="let add of address.controls; let i=index" [formGroupName]="i">
+          <p>Address</p>
+          <md-input placeholder="Street" name="street" formControlName="street"></md-input>
+          <div class="flex align-center">
+            <md-input placeholder="City" name="city" class="flex-three" formControlName="city"></md-input>
+            <select name="state" class="flex-one" formControlName="state">
+              <option value="" disabled>Select a state</option>
+              <option value="CA">CA</option>
+              <option value="NY">NY</option>
+            </select>
+            <md-input placeholder="zip" type="number" name="zip" class="flex-one" formControlName="zip"></md-input>
+          </div>
+        </div>
+        <button md-button (click)="add()">ADD ADDRESS</button>
       </div>
+
     </md-card-content>
     <md-card-actions align="end">
       <button md-button color="primary" type="submit">SUBMIT</button>

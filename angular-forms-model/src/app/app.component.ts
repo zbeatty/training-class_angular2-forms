@@ -10,7 +10,7 @@ import {FormGroup, FormControl, FormBuilder, Validators, FormArray, REACTIVE_FOR
 export class AppComponent implements OnInit {
   title = 'app works!';
   myForm: FormGroup;
-  firstName: FormControl;
+  address: FormArray;
 
   constructor(private fb: FormBuilder) { }
 
@@ -34,12 +34,7 @@ export class AppComponent implements OnInit {
       userName: '',
       password: '',
       confirmPassword: '',
-      address: this.fb.group({
-        street: '',
-        city: '',
-        state: '',
-        zip: ''
-      })
+      address: this._buildArray()
     });
 
     // form changes
@@ -57,9 +52,30 @@ export class AppComponent implements OnInit {
     );
   }
 
-  firstNameValidator(control: FormControl) : {[s:string]: boolean} {
+  add() {
+    this.address.push(this._buildGroup());
+  }
+
+  ////////////////////////////////////////
+  firstNameValidator(control: FormControl): { [s: string]: boolean } {
     if (!control.value.match(/^ABC/)) {
-      return {invalidName: true};
+      return { invalidName: true };
     }
+  }
+
+  _buildArray(): FormArray {
+    this.address = this.fb.array([
+      this._buildGroup()
+    ]);
+    return this.address;
+  }
+
+  _buildGroup(): FormGroup {
+    return this.fb.group({
+      street: '',
+      city: '',
+      state: 'NY',
+      zip: ''
+    });
   }
 }
